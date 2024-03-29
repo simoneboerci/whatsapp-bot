@@ -1,0 +1,220 @@
+/* Stili per il logo */
+#logo {
+    display: block;
+    margin: 0 auto 20px; /* Centra il logo e aggiungi spazio sotto */
+    max-width: 30%; /* Assicura che il logo non superi la larghezza del contenitore */
+    margin-top: 50px;
+}
+
+
+#header-messaggi{
+    color: #848F97;
+}
+
+
+#import-csv{
+    color: #5791BD;
+    text-decoration: underline;
+    font-size: 24px;
+    background: none;
+    margin: 30px;
+    border: none;
+}
+
+/* Stili per il contenitore del file di input */
+#hidden-file-input {
+    display: none; /* Mantieni nascosto l'input file */
+}
+
+
+/* Stili di base */
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #ECEEF0; /* Grigio chiaro di sfondo */
+    color: #3D4952; /* Grigio scuro per il testo normale */
+    font-size: 16px; /* Dimensione standard del testo */
+}
+
+
+.header-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    vertical-align: middle;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#header h3{
+    font-size: 24px; /* Dimensione per i titoli delle sezioni */
+    margin: 30px;
+}
+
+#header-spacer{
+    color: transparent;
+}
+
+.phone-numbers-container{
+    display: flex;
+    align-items: start;
+}
+
+.header-input, #phone-header-input {
+    font-weight: bold;
+    display:block; /* Per farlo apparire su una nuova riga */
+    width: 30%; /* Prende il 100% della larghezza del parent, meno un po' di padding */
+    padding: 10px; /* Aggiunge un po' di spazio all'interno dell'input */
+    border: none; /* Un bordo sottile con un colore grigio chiaro */
+    border-radius: 4px; /* Angoli arrotondati */
+    font-size: 16px; /* Dimensione del testo congruente con il resto della tua UI */
+    background-color: transparent; /* Sfondo bianco */
+    margin-top: 7px;
+    color: #3D4952;
+}
+
+/* Stili per la sezione dei dati csv */
+#data-section{
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #E0FCD6; /* Sfondo bianco per le sezioni */
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.data-set{
+    display: flex;
+    align-items: start;
+}
+
+.data-content, #data-content-phones{
+    color: #848F97; /* Testo grigio scuro per una migliore leggibilità */
+    vertical-align: middle;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
+    max-lines: 1;
+}
+
+#add-data-set{
+    color: #377E6A;
+    background: none;
+    text-decoration: underline;
+    border: none;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.message-section{
+    margin-left: 10% ;
+    margin-right: 5%;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.message-controls{
+    display: flex;
+    align-items: center;
+}
+
+.message-variant, .message-variant:focus{
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #FFFFFF;
+    border-radius: 18px;
+    border: none;
+    padding: 30px;
+    width: 100%;
+    min-height: 60px;
+    resize:none;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    outline-color: #377E6A;
+}
+
+
+.message-number{
+    font-weight: bold;
+    color: #3D4952;
+}
+
+
+#add-message{
+    border-radius: 100%;
+    height: 45px;
+    width: 45px;
+    margin-left: 14%;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: #377E6A; /* Verde scuro per i bottoni */
+    color: #FFFFFF; /* Testo bianco */
+    cursor: pointer;
+    border: none;
+}
+
+.add-variant, .next-variant{
+    padding: 10px;
+    font-weight: bold;
+    background-color: #377E6A; /* Verde scuro per i bottoni */
+    color: #FFFFFF; /* Testo bianco */
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+    width: 42px;
+    height: 42px;
+}
+
+
+.variant-count{
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+
+
+#parameters-section-all{
+    padding: 60px;
+}
+
+
+#header-parametri{
+    color:#3D4952;
+    margin-bottom: 30px;
+}
+
+
+#slider-1, #slider-2, #slider-3{
+    margin-bottom: 30px;
+}
+
+
+#min-delay, #max-delay, #conversation-every, #delay-min-every, #delay-max-every, #delay-min-msg, #delay-max-msg{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    outline-color: #377E6A;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+
+
+
+/* Stile specifico per il bottone "INVIA" */
+#send-messages {
+    font-size: 40px; /* Testo più grande per il bottone INVIA */
+    width: 100%; /* Occupa tutta la larghezza del contenitore */
+    background-color: #377E6A;
+    color: #FFFFFF;
+    padding: 40px;
+    border: none;
+}

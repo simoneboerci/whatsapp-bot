@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WhatsApp Automation Tool</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+
+    <!-- LOGO -->
+    <div id="header-container">
+        <img src="/images/logo.png" alt="Logo" id="logo">
+    </div>
+
+
+    <!-- HEADER -->
+    <div id="header" class="header-section">
+        <h3 id="header-messaggi">MESSAGGI</h3>
+
+        <!-- Questo input rimarrà nascosto nell'interfaccia utente -->
+        <input type="file" id="hidden-file-input" style="display: none;" accept=".csv">
+
+        <!-- Quando l'utente clicca questo bottone, in realtà attiveremo l'input file nascosto -->
+        <button id="import-csv">Importa file .csv</button>
+
+        <h3 id="header-spacer">MESSAGGI</h3>
+    </div>
+
+    
+    <!-- DATI IMPORTATI -->
+    <div id="data-section">
+        <div id="phone-numbers" class="phone-numbers-container">
+            <input type="text" value="Numero di telefono" id="phone-header-input" placeholder="Inserisci l'header" />
+            <p id="data-content-phones"></p>
+        </div>
+        <div id="data-content-section">
+            
+        </div>
+        <button id="add-data-set">+ Aggiungi set di dati</button>
+    </div>
+    
+
+
+    <div id="messages-container">
+        <!-- I messaggi verranno aggiunti qui dinamicamente -->
+    </div>
+    <button id="add-message">+</button>    
+
+
+    <!-- PARAMETRI -->
+    <div id="parameters-section-all">
+       
+        <!-- HEADER -->
+        <div id="header-parametri">
+            <h3>PARAMETRI</h3>
+        </div>
+
+
+        
+        <div id="parameters-section">
+
+            <!-- Slider per Delay Apertura Conversazioni -->
+
+            <div id="slider-1">
+                <label for="min-delay">Attendi un numero <u>casuale</u> di <b>secondi</b> compreso tra</label>
+                <input type="number" id="min-delay" name="min-delay" min="0" max="10" value="2">
+            
+                <label for="max-delay">e</label>
+                <input type="number" id="max-delay" name="max-delay" min="0" max="10" value="5">
+
+                <label for="max-delay">prima di aprire una <b>nuova conversazione.</b></label>
+            </div>
+        
+        
+
+            <!-- Slider per Delay ogni X Conversazioni -->
+
+            <div id="slider-2">
+                <label for="conversation-every"><b>Ogni</b></label>
+                <input type="number" id="conversation-every" name="conversation-every" min="1" max="100" value="50">
+            
+                <label for="delay-min-every"> <b>conversazioni</b> aperte attendi un numero <u>casuale</u> di <b>secondi</b> compreso tra</label>
+                <input type="number" id="delay-min-every" name="delay-min-every" min="0" max="84" value="35">
+            
+                <label for="delay-max-every">e</label>
+                <input type="number" id="delay-max-every" name="delay-max-every" min="0" max="84" value="84">
+
+                <label for="max-delay">.</label>
+            </div>
+            
+
+            <!-- Slider per Delay Nuovi Messaggi -->
+            
+            <div id="slider-3">
+                <label for="delay-min-msg">Attendi un numero <u>casuale</u> di <b>secondi</b> compreso tra</label>
+                <input type="number" id="delay-min-msg" name="delay-min-msg" min="0" max="10" value="1">
+            
+                <label for="delay-max-msg">e</label>
+                <input type="number" id="delay-max-msg" name="delay-max-msg" min="0" max="10" value="3"> 
+                <label for="delay-max-msg"><u>tra un messaggio e l'altro</u> all'interno della <b>stessa conversazione.</b></label>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTONE -->
+    <div id="button-section">
+        <button id="send-button">INVIA</button>
+    </div>
+
+    
+    <script src="./scripts/App.js"></script>
+</body>
+</html>
