@@ -6,7 +6,6 @@
     margin-top: 50px;
 }
 
-
 #header-messaggi{
     color: #848F97;
 }
@@ -108,7 +107,7 @@ body {
 
 
 
-.message-section{
+.message-container{
     margin-left: 10% ;
     margin-right: 5%;
     margin-top: 60px;
@@ -138,7 +137,7 @@ body {
 }
 
 
-.message-number{
+.message-sequence-number{
     font-weight: bold;
     color: #3D4952;
 }
@@ -159,7 +158,7 @@ body {
     border: none;
 }
 
-.add-variant, .next-variant{
+.add-message-variant, .next-message-variant{
     padding: 10px;
     font-weight: bold;
     background-color: #377E6A; /* Verde scuro per i bottoni */
@@ -173,7 +172,7 @@ body {
 }
 
 
-.variant-count{
+.message-variant-count{
     margin-right: 10px;
     white-space: nowrap;
 }
