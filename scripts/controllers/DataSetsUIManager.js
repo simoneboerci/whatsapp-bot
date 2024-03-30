@@ -37,4 +37,8 @@ export class DataSetsUIManager {
         this.contacts = newContacts;
         this.notifyDataUpdated();
     }
+
+    getContacts() {
+        return this.contacts;
+    }
 }

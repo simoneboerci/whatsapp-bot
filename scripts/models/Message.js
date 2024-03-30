@@ -20,6 +20,11 @@ export class Message {
         this.renderVariants(); // Aggiorna la visualizzazione per mostrare la variante corrente
     }
 
+    getRandomVariantText() {
+        const variantIndex = Math.floor(Math.random() * this.variants.length);
+        return this.variants[variantIndex].text;
+    }
+
     render() {
         const messagesSection = document.getElementById('messages-section');
 

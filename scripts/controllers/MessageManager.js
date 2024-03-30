@@ -12,5 +12,24 @@ export class MessageManager {
         newMessage.render(); // Genera e aggiunge l'HTML del messaggio alla pagina
     }
 
-    // Potenzialmente altri metodi per coordinare l'interazione tra messaggi
+    getMessages() {
+        return this.messages.map(message => message.getRandomVariantText());
+    }
+
+    sendMessages(contacts, sender) {
+        let index = 0; // Inizia dal primo contatto
+    
+        const openNextMessage = () => {
+            if (index < contacts.length) {
+                const contact = contacts[index];
+                const messageText = this.messages[index % this.messages.length].getRandomVariantText();
+                sender.sendMessage(contact.phoneNumber, messageText);
+    
+                index++; // Passa al prossimo contatto
+                setTimeout(openNextMessage, 3000); // Aspetta 3 secondi prima di aprire il prossimo messaggio
+            }
+        };
+    
+        openNextMessage(); // Inizia l'invio dei messaggi
+    }
 }

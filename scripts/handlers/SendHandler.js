@@ -1,5 +1,8 @@
 export class SendHandler {
-    constructor() {
+    constructor(dataSetsUIManager, messageManager, messageSender) {
+        this.dataSetsUIManager = dataSetsUIManager;
+        this.messageManager = messageManager;
+        this.messageSender = messageSender;
         this.sendButton = document.getElementById('send-button');
         this.setupEventListeners();
     }
@@ -9,7 +12,8 @@ export class SendHandler {
     }
 
     sendMessage() {
-        console.log("Invio dei messaggi...");
-        // Implementa la logica di invio messaggio qui
+        // Utilizza i riferimenti a dataSetsUIManager e messageManager per ottenere i dati necessari
+        const contacts = this.dataSetsUIManager.getContacts(); // Assumi che questa funzione restituisca i contatti importati
+        this.messageManager.sendMessages(contacts, this.messageSender);
     }
 }
