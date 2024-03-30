@@ -1,7 +1,15 @@
-import { CSVParser } from './utils/CSVParser.js';
+import { DataSetsUIManager } from './controllers/DataSetsUIManager.js';
+
 import { CSVImportHandler } from './handlers/CSVImportHandler.js';
+import { DataSetHandler } from './handlers/DataSetHandler.js';
+
+import { CSVParser } from './utils/CSVParser.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const csvParser = new CSVParser();
-    new CSVImportHandler(csvParser);
+    const dataSetsUIManager = new DataSetsUIManager();
+
+    const csvImportHandler = new CSVImportHandler(csvParser, dataSetsUIManager); // Assumi modifiche per accettare dataSetsUIManager
+    const dataSetHandler = new DataSetHandler(dataSetsUIManager);
 });
+

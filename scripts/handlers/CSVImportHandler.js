@@ -1,6 +1,7 @@
 export class CSVImportHandler {
-    constructor(csvParser) {
+    constructor(csvParser, dataSetsUIManager) {
         this.csvParser = csvParser;
+        this.dataSetsUIManager = dataSetsUIManager;
         this.setupEventListeners();
     }
 
@@ -30,6 +31,7 @@ export class CSVImportHandler {
                 const contacts = this.csvParser.parse(evt.target.result, phoneHeader);
                 console.log(contacts);
                 this.displayFirstFourPhoneNumbers(contacts);
+                this.dataSetsUIManager.updateContacts(contacts);
             };
             reader.onerror = (evt) => console.error("Errore nella lettura del file", evt);
         }
