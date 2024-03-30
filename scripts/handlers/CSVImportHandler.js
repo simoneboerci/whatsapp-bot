@@ -21,12 +21,25 @@ export class CSVImportHandler {
             const reader = new FileReader();
             reader.readAsText(file, "UTF-8");
             reader.onload = (evt) => {
-                const parsedData = this.csvParser.parse(evt.target.result);
-                console.log(parsedData);
-                // Qui puoi fare ulteriori operazioni con i dati importati
+                const phoneHeader = document.getElementById('phone-header-input').value;
+                if (!phoneHeader) {
+                    console.error("L'intestazione del numero di telefono non è stata specificata.");
+                    return;
+                }
+    
+                const contacts = this.csvParser.parse(evt.target.result, phoneHeader);
+                console.log(contacts);
+                this.displayFirstFourPhoneNumbers(contacts);
             };
             reader.onerror = (evt) => console.error("Errore nella lettura del file", evt);
         }
     }
+
+    displayFirstFourPhoneNumbers(contacts) {
+        const phoneNumbers = contacts.map(contact => contact.phoneNumber).slice(0, 4);
+        const displayText = phoneNumbers.join(', ') + (contacts.length > 4 ? ', ...' : '');
+        document.getElementById('data-content-phones').textContent = displayText;
+    }
+    
 }
 
