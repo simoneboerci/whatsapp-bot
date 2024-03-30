@@ -1,5 +1,6 @@
 export class CSVImportHandler {
-    constructor() {
+    constructor(csvParser) {
+        this.csvParser = csvParser;
         this.setupEventListeners();
     }
 
@@ -16,8 +17,16 @@ export class CSVImportHandler {
 
     handleFileChange(event) {
         const file = event.target.files[0];
-        console.log("File selezionato:", file);
-        // Qui dovresti aggiungere la logica per il parsing del file CSV
+        if (file) {
+            const reader = new FileReader();
+            reader.readAsText(file, "UTF-8");
+            reader.onload = (evt) => {
+                const parsedData = this.csvParser.parse(evt.target.result);
+                console.log(parsedData);
+                // Qui puoi fare ulteriori operazioni con i dati importati
+            };
+            reader.onerror = (evt) => console.error("Errore nella lettura del file", evt);
+        }
     }
 }
 

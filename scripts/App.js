@@ -1,16 +1,7 @@
-import { CSVImportHandler } from '../handlers/CSVImportHandler.js';
-import { DataSetHandler } from '../handlers/DataSetHandler.js';
-import { MessageHandler } from '../handlers/MessageHandler.js';
-import { SendHandler } from '../handlers/SendHandler.js';
+import { CSVParser } from './utils/CSVParser.js';
+import { CSVImportHandler } from './handlers/CSVImportHandler.js';
 
-class App {
-    constructor() {
-        new CSVImportHandler();
-        new DataSetHandler();
-        new MessageHandler();
-        new SendHandler();
-        // Altri handler possono essere inizializzati qui
-    }
-}
-
-new App();
+document.addEventListener('DOMContentLoaded', () => {
+    const csvParser = new CSVParser();
+    new CSVImportHandler(csvParser);
+});
