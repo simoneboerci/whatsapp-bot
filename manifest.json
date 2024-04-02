@@ -3,10 +3,7 @@
   "name": "WhatsApp Automation Tool",
   "version": "1.0",
   "description": "Un'estensione di Chrome per inviare messaggi automatizzati su WhatsApp Web.",
-  "permissions": ["activeTab", "storage", "tabs", "scripting", "*://web.whatsapp.com/*"],
-  "background": {
-    "service_worker": "Background.js"
-  },
+  "permissions": ["activeTab", "storage", "tabs", "scripting"],
   "action": {
     "default_popup": "index.html"
   },
